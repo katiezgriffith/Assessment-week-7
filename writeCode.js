@@ -15,6 +15,7 @@ for (let i = 0; i < array.length; i++) {
 console.log(value)
 
 //runtime is O(N^2)
+//Space O(N2)
 
 
 //Unique CHars
@@ -36,7 +37,8 @@ function hasUniqueChars(string) {
 
 console.log(hasUniqueChars("Moonday"))
 
-//runtime: O(n)
+//runtime: O(N)
+//Space: O(N)
 
 
 //PANGRAM SENTENCE
@@ -57,4 +59,23 @@ const isPangram = (str = '') => {
  };
  console.log(isPangram("The quick brown fox jumps over the lazy dog!"));
 
- //runtime = O(n)
+ //runtime = O(N)
+ //space = O(N)
+
+
+ //LONGEST WORD
+
+ function findLongestWord(arr) {
+    let len = 0
+    for (let i = 0; i < arr.length; i++) {
+      if( arr[i].length > len) {
+        len = arr[i].length
+      }
+    }
+    return len
+  }
+  
+ console.log(findLongestWord(["hi", "hello"]))
+
+ //runtime O(n)
+ //space O(n)
