@@ -14,7 +14,7 @@ for (let i = 0; i < array.length; i++) {
 
 console.log(value)
 
-//runtime is O(2)
+//runtime is O(N^2)
 
 
 //Unique CHars
@@ -39,3 +39,22 @@ console.log(hasUniqueChars("Moonday"))
 //runtime: O(n)
 
 
+//PANGRAM SENTENCE
+
+const isPangram = (str = '') => {
+    str = str.toLowerCase();
+    const { length } = str;
+    const alphabets = 'abcdefghijklmnopqrstuvwxyz';
+    const alphaArr = alphabets.split('');
+    for(let i = 0; i < length; i++){
+       const el = str[i];
+       const index = alphaArr.indexOf(el);
+       if(index !== -1){
+          alphaArr.splice(index, 1);
+       };
+    };
+    return !alphaArr.length;
+ };
+ console.log(isPangram("The quick brown fox jumps over the lazy dog!"));
+
+ //runtime = O(n)
